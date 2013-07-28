@@ -1,0 +1,124 @@
+Proceso de exportación de partes a Excel
+========================================
+
+1. Ver si el cliente tiene contrato y ver si tiene los quimicos incluidos.
+2. Leer las líneas:
+2.1.    Si es mano de obra, sumar 1 al contador de lineas de partes de obra.
+        Si es un artículo de químicos y el cliente tiene quimicos incluidos,
+            sumar 1 al contador de lineas de partes de obra, en otro caso, 
+            sumar 1 al contador de lineas de partes de administración.
+        Si es un artículo y no es un artículo de químicos,
+            sumar 1 al contador de lineas de partes de administración.
+        Si es DESPM, desplazamiento, sumar 1 al contador de lineas de partes de obra.
+3. Si el contador de líneas de partes de obra es > 1, generar parte de obra
+      3.1 Crear el registro de cabecera:
+            Columna A = C
+            Columna B = Nº de parte
+            Columna C = O
+            Columna D = A
+            Columna E = C
+            Columna F = Nº de cliente
+            Columna G = Nº de obra
+            Columna H = char1_al (hora_desde)
+            Columna I = char2_al (hora_hasta)
+            Columna J = char3_al (limpieza_del_fondo: SI/NO)
+            Columna K = char4_al (cepillada: SI/NO)
+            Columna L = char5_al (control-quimicos-maquinaria: SI/NO)
+            Columna M = char6_al (meteo: S N LL V)
+            Columna N = char7_al (nivel_piscina: Bien|Alto|Bajo)
+            Columna O = char8_al (nivel_cascada: No Tiene|Bien|Alto|Bajo)
+            Columna P = dec1_al
+            Columna Q = dec2_al
+            Columna R = dec3_al
+            Columna S = dec4_al
+            Columna T = dec5_al
+            Columna U = dec6_al
+            Columna V = ed1_al (limpiezas: BO SK FI PR DE CL RE)
+            Columna W = ed2_al (quimicos: CG CP PH PH- DO AG FL AGN DI)
+            Columna X = fec1_al
+            Columna Y = fec2_al
+            Columna Z = fec3_al
+      3.2 Leer las líneas y procesar según el tipo:
+        Si es mano de obra, sumar 1 al contador de lineas de partes de obra.
+            3.2.1 Crear línea de mano de obra
+                Columna A: M
+                Columna AA: Nº de Parte
+                Columna AC: Fecha de imputacion
+                Columna AE: Capítulo de obra
+                Columna AF: Código de actividad
+                Columna AG: Código de subactividad
+                Columna AH: Nº de presupuesto
+                Columna AI: Código de operario
+                Columna AJ: Código de tipo de hora
+                Columna AK: Horas imputables
+                Columna AL: Horas trabajadas
+                Columna AM: Horas facturables
+        Si es un artículo de químicos y el cliente tiene quimicos incluidos,
+            sumar 1 al contador de lineas de partes de obra, en otro caso,
+            3.2.2 Crear la línea de artículo
+                Columna A: A
+                Columna AA: Nº de Parte
+                Columna AB: Cantidad
+                Columna AC: Fecha de imputacion
+                Columna AD: Código de artículo
+                Columna AE: Capítulo de obra
+                Columna AF: Código de actividad
+                Columna AG: Código de subactividad
+                Columna AH: Nº de presupuesto
+        Si es DESPM, desplazamiento, sumar 1 al contador de lineas de partes de obra.
+            3.2.3 Crear una línea de Servicios o de Gastos
+                Columna A: G
+                Columna AA: nº de parte
+                Columna AB: Cantidad
+                Columna AC: Fecha de imputacion
+                Columna AD: Codigo de gasto
+                Columna AE: Capítulo de obra
+                Columna AF: Código de actividad
+                Columna AG: Código de subactividad
+                Columna AH: Nº de presupuesto
+                Columna AI: Código de operario
+
+4. Si el contador de líneas de partes de administracion es > 1, generar parte de administracion
+      4.1 Crear el registro de cabecera:
+            Columna A = C
+            Columna B = Nº de parte
+            Columna C = A
+            Columna D = A
+            Columna E = C
+            Columna F = Nº de cliente
+            Columna G = Nº de obra
+            Columna H = char1_al (hora_desde)
+            Columna I = char2_al (hora_hasta)
+            Columna J = char3_al (limpieza_del_fondo: SI/NO)
+            Columna K = char4_al (cepillada: SI/NO)
+            Columna L = char5_al (control-quimicos-maquinaria: SI/NO)
+            Columna M = char6_al (meteo: S N LL V)
+            Columna N = char7_al (nivel_piscina: Bien|Alto|Bajo)
+            Columna O = char8_al (nivel_cascada: No Tiene|Bien|Alto|Bajo)
+            Columna P = dec1_al
+            Columna Q = dec2_al
+            Columna R = dec3_al
+            Columna S = dec4_al
+            Columna T = dec5_al
+            Columna U = dec6_al
+            Columna V = ed1_al (limpiezas: BO SK FI PR DE CL RE)
+            Columna W = ed2_al (quimicos: CG CP PH PH- DO AG FL AGN DI)
+            Columna X = fec1_al
+            Columna Y = fec2_al
+            Columna Z = fec3_al
+      4.2 Leer las líneas y procesar según el tipo:
+        Si es un artículo de químicos y el cliente NO tiene quimicos incluidos o
+        Si es un artículo y no es un artículo de químicos.
+            4.2.1 Crear la línea de artículo
+                Columna A: A
+                Columna AA: Nº de Parte
+                Columna AB: Cantidad
+                Columna AC: Fecha de imputacion
+                Columna AD: Código de artículo
+                Columna AE: Capítulo de obra
+                Columna AF: Código de actividad
+                Columna AG: Código de subactividad
+                Columna AH: Nº de presupuesto
+
+5. Leer el siguiente parte y comenzar de nuevo
+            

@@ -1,0 +1,38 @@
+LISTA DE TABLAS DE TELEMATEL A SINCRONIZAR
+==========================================
+*********TLMPLUS.PUB
+gmclien
+gmclienc
+gmclidel **COLUMNA CHAR1_GMCLIDEL excede la longitud o precisión maxima: Aparece en clientes_edit.scx y en clientes_listado_emails.scx
+gmfopag
+goparlin ** 151730 REG / 39 SEG
+goobrac
+gfemple
+"tipo-op"
+gmdepar
+gopartes  **65.363 REG / 19 SEGGA
+galartic
+galardel  ** DEMASIADAS COLUMNAS: Aparece en partes_edit_lineas.scx y en pre_partes_edit_lineas.scx
+
+*********TLMPLUS1.PUB
+atconctr
+atalbctr
+gamovim ** 100.426 REG / 15 SEG
+gvfacab
+gofacobr
+gvallin
+gofalind
+gopaend
+gmtesoc
+-->>obras
+
+*********TLMPLUS2.PUB
+atconctr
+atalbctr
+gamovim
+gvfacab
+gofacobr
+gvallin
+gofalind
+gopaend
+gmtesoc

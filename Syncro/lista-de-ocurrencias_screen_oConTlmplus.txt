@@ -1,0 +1,62 @@
+I:\MiCodigo\myGest\prog\clientes_edit.SCT
+  **zrefrescarContactos
+  **zrefrescarContratos
+  **zrefrescarExtracto
+  **zrefrescarFacturas
+  **zrefrescarLineasParte
+  **zrefrescarNotas
+  **zrefrescarObras
+  **zrefrescarPartes
+  **zrefrescarPartesAdmin                  
+I:\MiCodigo\myGest\prog\clientes_edit_parte.SCT
+  **zrefrescarParte
+I:\MiCodigo\myGest\prog\clientes_listado_cod_barras.SCT
+  **zCargarDatos
+I:\MiCodigo\myGest\prog\clientes_listado_emails.SCT
+  **zCargarDatos
+I:\MiCodigo\myGest\prog\clientes_listado_pa_pendientes.SCT
+  **zCargarDatos
+I:\MiCodigo\myGest\prog\clientes_listado_qr.SCT
+  **zCargarDatos
+I:\MiCodigo\myGest\prog\clientes_listado_saldos.SCT
+  **zCalculaAlbaranesPendientes
+  **zCalculaPendienteTelematel
+  **zCalculaSaldoTelematel    
+I:\MiCodigo\myGest\prog\clientes_selector.SCT
+  **cmdSync.Click
+  **zCrearCursorLista  
+I:\MiCodigo\myGest\prog\crear_conexiones_bases_de_datos_en_screen.prg
+I:\MiCodigo\myGest\prog\crm_edit.SCT
+  **Load
+  **zCargarRegistro  
+I:\MiCodigo\myGest\prog\facturas_comando_select.prg
+I:\MiCodigo\myGest\prog\importacion_odk.SCT
+  **cmdAceptar.Click
+I:\MiCodigo\myGest\prog\importacion_odk_2.SCT
+  **cmdAceptar.Click
+I:\MiCodigo\myGest\prog\importacion_odk_2_40.SCT
+  **cmdAceptar.Click
+I:\MiCodigo\myGest\prog\operarios_selector.SCT
+  **zCrearCursorLista
+I:\MiCodigo\myGest\prog\partes_edit.SCT
+  **cmdActualizarObra.Click
+  **txtClcode1.zRefrescaCampos
+  **zCargarParte
+I:\MiCodigo\myGest\prog\partes_edit_lineas.SCT
+  **Refresh
+I:\MiCodigo\myGest\prog\partes_exportacion_a_excel.SCT
+  **cmdExportar.Click    
+I:\MiCodigo\myGest\prog\partes_importar_desde_telematel.SCT
+  **cmdImportar.Click
+  **zCrearCursorLista  
+I:\MiCodigo\myGest\prog\partes_listado_cruce_con_contratos.SCT
+  **zCargarDatos
+I:\MiCodigo\myGest\prog\pre_partes_edit.SCT
+  **cmdActualizarObra.Click
+  **txtClcode1.zRefrescaCampos
+  **zCargarParte
+I:\MiCodigo\myGest\prog\pre_partes_edit_lineas.SCT
+  **Refresh
+I:\MiCodigo\myGest\prog\rutero_lineas_edit_altamasiva.SCT
+  **cmdGuardar.Click
+I:\MiCodigo\myGest\prog\utils.prg

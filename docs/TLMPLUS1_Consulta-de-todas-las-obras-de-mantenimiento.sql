@@ -1,0 +1,1 @@
+select cod_obr,cod_cli,des_obr from PUB.obras where OBRAS.cod_tobr = 10 order by cod_cli

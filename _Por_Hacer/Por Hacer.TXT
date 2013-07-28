@@ -1,0 +1,21 @@
+1. Programa para enviar por mail automaticamente las facturas de los clientes que así lo deseen. Enviar-
+   las en formato PDF y marcarlas como enviadas pe. Campo: EnviadaXveces = 0, 1, 2, ...
+   - LLevar un registro de los mails enviados automáticamente.
+   - Hay una utilidad para enviar correos desde gMail.
+   - Buscar una utilidad para converter FRX a PDF programaticamente.
+   
+   ESTO iria incluido en un modulo CRM para control de los clientes.
+   
+2. Añadir al programa principal un toolBar, con los accesos directos a los programas
+  OK. 23.03.11 19:50
+
+3. En los programas de exportación a KML (Google Earth), ordenar los puntos por fecha+hora_desde
+
+4. Incorporar en todos los botones, p.e. 'Guardar', 'Salir', etc. una imagen para 'hacer más bonito'
+    se pueden tomas de la app myGestion
+
+5. En 'Partes' y en 'Pre-partes', falta chequear consistencia del campo 'antialgas_negra'
+
+6. Poder 'Borrar' partes. Ahora no se pueden borrar porque dicen que son partes
+  'importados', en caso de ser importado de pre-partes se debería borrar y dar la
+  opción de borrar el pre-parte, en caso negativo, poner el pre-parte como "no confirmado" 

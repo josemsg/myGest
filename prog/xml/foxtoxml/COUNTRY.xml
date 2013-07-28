@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="COUNTRY.xsl"?>
+<COUNTRY_table>
+<COUNTRY>
+    <COUNTRY><![CDATA[Argentina      ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Austria        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Belgium        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Brazil         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Canada         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Denmark        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Finland        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[France         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Germany        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Ireland        ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Italy          ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Mexico         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Norway         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Poland         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Portugal       ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Spain          ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Sweden         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Switzerland    ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[UK             ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[USA            ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Venezuela      ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[Russia         ]]></COUNTRY>
+</COUNTRY>
+<COUNTRY>
+    <COUNTRY><![CDATA[China          ]]></COUNTRY>
+</COUNTRY>
+</COUNTRY_table>

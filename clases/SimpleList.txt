@@ -1,0 +1,446 @@
+SimpleList documentation
+
+This article forms the official documentation for our SimpleList control. It will tell you everything you need to know about how to use the control, with full details of all its exposed properties and methods. The article is a longer version of the article which appears on the SimpleList web page, at www.ml-consult.co.uk/foxst-28.htm.
+
+SimpleList is currently at version 1.1. Please see below for a summary of the new features in this version. For information about updates, please keep an eye on the above web page. 
+
+The SimpleList control and its accompanying documentation are the copyright of Mike Lewis Consultants Ltd. SimpleList is completely free, and you are welcome to give copies to friends and colleagues. We ask only that you do not remove our copyright notices or disclaimers. We have tested SimpleList in our own applications, but we make no guarantees that it will work in yours, so be sure to test it thoroughly before relying on the results.
+
+About SimpleList
+
+SimpleList is a Visual FoxPro class that acts as a wrapper for the Microsoft ListView ActiveX control. Its aim is to provide a simple cursor-based method of populating a ListView and of obtaining useful information from it. In fact, once you have a cursor in place, you only need three lines of code to make your list appear. 
+
+SimpleList has many features which will help you exploit the ListView to the full. However, most of these are optional. You can safely ignore any features that you are not interested in.
+
+Requirements
+
+SimpleList requires Visual FoxPro 7.0 or later.
+
+What exactly is a ListView?
+
+To see a ListView in action, you need look no further than the right-hand pane in Windows Explorer. It is the ListView that provides the list of files and folders, with its familiar large icon, small icon, list and detail views. The ListView ActiveX control can provide that same kind of functionality in your own applications.
+
+With typical databased applications, you'll probably only be interested in displaying your list in detail view (also knows as report view), as this provides the most intuitive way of viewing tabular data. However, the ListView does support the other three views as well. Figure 1 shows an example of detail view, while Figure 2 shows large icon view.
+
+
+Figure 1: A ListView in detail view
+
+
+Figure 2: The same list in large icon view
+
+As well as providing four different views, the ListView control offers several other benefits:
+
+-  In detail view, the user can easily move and resize the columns. 
+
+-  Also in detail view, the user can sort the data by clicking on a column header. Click once to sort to ascending sequence; click again to sort to descending sequence. 
+
+-  Each item in the list can have an associated icon or graphic. This is pretty well essential in large icon and small icon views, but perhaps less useful in list and detail views (although icons are completely optional in all four views). 
+
+-  You can add a checkbox to each item. This provides an easy way of letting the user make multiple selections from a list. 
+
+-  In detail view, you can give each item its own tooltip. This is useful for displaying additional information that would otherwise be too wide for the list. 
+
+-  You can let the user edit an item's text simply by clicking on it (in the way that you would rename a file in Windows Explorer). 
+
+-  Various cosmetic settings can be applied. For example, you can choose to show grid lines in detail view, and you can opt to switch on 'hot tracking'. 
+
+-  Drag-and-drop is supported. Users can drag an item from the list and drop it in another control or application. 
+
+Limitations
+
+Although SimpleList supports most of the ListView's features, it does have some limitations:
+
+-  If you choose to use icons, you must use the same icon for a given item in all four views. 
+
+-  In detail view, the user can resize the columns but cannot rearrange them. 
+
+-  There are some event-trapping limitations. SimpleList lets you trap clicks, double-clicks and changes in the position of the highlight, but it cannot distinguish between left- and right-clicks. 
+
+Getting started
+
+If you have not already done so, go ahead and download your copy of SimpleList now - see How to download SimpleList, below.
+
+The rest of this article will tell you how to put SimpleList to work. Please don't be put off by the length of the article or the number of properties and methods described. SimpleList really is simple, and most of the information that follows is completely optional. You can get started with SimpleList with just a few lines of code.
+
+The least you need to know
+
+To put SimpleList to work, follow these steps:
+
+1. Create a cursor to hold the data that you want to display in the list (although we will use the term cursor throughout this article, it could just as well be a table or a view). As a minimum, the cursor must contain a single character field; it is the data from this field that will be used to populate the list.
+
+2. Drop the SimpleList on a form.
+
+3. To populate the list, write code similar to the following (this would typically go in the control's Init event):
+
+WITH THIS 
+  .cAlias = "Customer" 
+  .cData = "Company" 
+  .PopulateList 
+ENDWITH
+
+That's all there is to it. As an example, if the cursor contains the data shown below, your form will look something like Figure 3.
+
+Company 
+--------
+Alfreds Futterkiste 
+Ana Trujillo 
+Emparedados y h 
+Antonio Moreno Taquer¡a 
+Around the Horn 
+Blauer See Delikatessen 
+Blondel p‚re et fils 
+Bon app' 
+Bottom-Dollar Markets 
+B's Beverages 
+Centro comercial Moctezuma 
+Chop-suey Chinese 
+Ernst Handel
+
+
+
+Figure 3: A one-column list in detail view.
+
+Let's just recap the above properties and methods.
+
+cAlias
+The alias of the cursor (or table or view) that contains the data for the list. When you call PopulateList, the cursor must be open in the current data session.
+
+cData
+A comma-delimited list of the cursor fields that are to be used to populate the list. You need to specify at least one field, and this must be a character field. The contents of this field will show up in all four views.
+
+You can optionally list more fields in the cData property. If you do, their contents will show up as separate columns in detail view, but they will be ignored in the other three views. These additional fields can be of any data type.
+
+PopulateList
+Call this method to populate the list with data from the cursor. Each time you call it, the list will revert to its default view, column widths, sort order, etc. If you want to retain these settings, call instead:
+
+RefreshList
+This will re-populate the list, but will retain the current view, column widths, sort order, etc. You should call this method if the underlying data changes after you have initially populated the list.
+
+As another example, consider this cursor:
+
+Company                   City       Country    Amount
+-------                   ----       -------    ------
+Alfreds Futterkiste       Berlin     Germany    6300
+Ana Trujillo Emparedado.. M‚xico D.F.Mexico     3500
+Antonio Moreno Taquer¡a   M‚xico D.F.Mexico     8500
+Around the Horn           London     UK         17100
+Blauer See Delikatessen   Mannheim   Germany    5000
+Blondel pŠre et fils      Strasbourg France     22205
+Bon app'                  Marseille  France     27100
+Bottom-Dollar Markets     Tsawassen  Canada     27800
+B's Beverages             London     UK         11000
+Centro comercial Moctez.. M‚xico D.F.Mexico     1000
+Chop-suey Chinese         Bern       Switzer..  17696
+Ernst Handel              Graz       Austria    122900
+The following code will produce the list shown in Figure 1 (but without the icons):
+
+WITH THIS 
+  .cAlias = "Customer" 
+  .cData = "Company,City,Country,Amount" 
+  .PopulateList 
+ENDWITH
+
+Choosing the view
+By default, PopulateList displays the list in detail view. The following settings are available:
+
+nDefaultView
+Use this property to change the default view (0 = large icons, 1 = small icons, 2 = list, 3 = detail). This only affects the view displayed by PopulateList. To change the view after the list has been populated, call the following method:
+
+ChangeView
+Call this to switch to a different view. Pass the view number (0 to 3) as a parameter.
+
+nCurrentView
+This property tells you the current view (0 to 3). It is read-only.
+
+If you want to give the user a way of switching the view, you could put the following code in a button on the form. Each time the button is clicked, the next view in sequence will be displayed.
+
+LOCAL lnView 
+WITH THISFORM.MySimpleList 
+  lnView = (.nCurrentView + 1) % 4
+ .ChangeView(lnView) 
+ENDWITH
+
+More about columns
+
+By default, the columns headers in detail view will show the field names from the cursor. The columns will be left-aligned. If there is more than one column, they will start out with equal widths. You can vary that behaviour as follows:
+
+cColumnHeaders
+A comma-delimited list of your column headers. The headers should appear in the same order as the fields specified in cData. If any column header is missing from cColumnHeaders, the field name will be used instead.
+
+cColumnWidths 
+A comma-delimited list of the initial widths, in pixels, of each column. If omitted, the columns will start out with approximately equal widths. You can set a width to zero, in which case it will be hidden (this is useful for sorting on non-visible data; more on this in the section on Sorting, below).
+
+cColumnAlignments
+A comma-delimited list indicating the alignment of each column. Each item in the list is either L (left-aligned), R (right-aligned) or C (centred). The default for each column is L. However, the left-most column is always left-aligned, regardless of the setting of this property. The setting applies both to the column heading and to the data within the column.
+
+The above three properties are only applied when the list is initially populated, not when it is refreshed.
+
+lHideColumnHeaders
+If .T., no column headers will be displayed. This means that the user will not be able to resize the columns or sort the data by clicking on a column header. The setting takes effect straight away.
+
+cAdjustedColumnWidths
+This will contain a comma-delimited list of the current column widths, in pixels. This differs from cColumnWidths in that it is read-only, and contains the actual widths at any one time, even if these have been adjusted by the user (nColumnWidths contains the initial widths). You can use cAdjustedColumnWidths to save the current widths so that they can be restored the next time the SimpleList is instantiated.
+
+Icons
+
+If you plan to display your list in large icon or small icon view, you will probably want to assign icons to the list items - after all, that is the whole point of those views. If you do assign icons, they will also show up in list and detail views. But it's your choice. If you are not interested in icons, you can ignore this entire section.
+
+cIconField
+This is the name of a field in your cursor which contains the filename of the icon's image file. If you wish, you can assign a different icon to each item in the list. If the field is empty in a given cursor record, the default image (see below) will be used instead.
+
+cDefaultIcon
+The filename of a default image file. This will be used if cIconField is empty, or if the cursor's icon field is empty in a given record. If both cIconField and cDefaultIcon are empty, no icons will appear.
+
+The image file can be a BMP, GIF, JPG or ICO file. It is your responsibility to ensure that the file can be found at run time (SimpleList does not check for this).
+
+Unlike with the underlying ListView control, SimpleList does not let you assign different sizes of icons for the different views. Whatever image you specify, it will be scaled to either 48 x 48 pixels (for large icon view) or 16 x 16 pixels (for the other three views). For the best results, use an ICO file that contains two images, one at each of the required sizes.
+
+Tooltips
+
+Use the following properties if you want a tooltip to appear against each item. The text of the tooltip can be different for each item. This is useful if you want to let the user see subsidiary information that would not otherwise fit in the list. These tooltips only appear in detail view, and only when the mouse is over the left-most column. A tooltip is limited to approximately 75 characters.
+
+cTooltipField
+The name of a cursor field which contains the item's tooltip. This would normally be a character or memo field, but this is not essential.
+
+lShowTooltips
+A master switch for tooltips. Set it to .T. to enable tooltips (default setting is .F.).
+
+Sorting
+These properties let you control the way that the list is sorted. They apply in detail view only.
+
+lSorted
+This is a master switch. Set it to .T. if you want to let the user sort the list by clicking a column header. The default is .F.
+
+nInitialSortColumn
+The number of the column on which the list is initially sorted. The default is 1, which is the left-most column. The setting only applies if lSorted (see above) is .T. If it is not, the list will appear in the same sequence as the cursor.
+
+nInitialSortDirection
+The direction in which the list is initially sorted (0 = ascending, 1 = descending; default is 0). The setting only applies if lSorted (see above) is .T.
+
+cSortColumns
+Use this property if you want the list to be sorted on a column other than the one whose header the user clicked on. This is useful if the contents of the column do not reflect its natural sequence. For example, if the column contains dates in DD-MMM-YY format, sorting on that column will simply sort the dates to ASCII sequence, not date sequence. Using cSortColumns, you can specify an alternative column for sorting. This could contain the same dates in YYYYMMDD format. By setting the width of this alternative column to 0, the user will be unaware of its presence.
+
+cSortColumns should contain a comma-delimited list of integers, one per column, in the sequence that the columns are listed in cData. If a given integer is 0, then clicking on its column header will sort the list on that column. If it contains a positive value, then the integer represents the number of the column to be sorted.
+
+Consider this example:
+
+SELECT OrderID, OrderDate, OrderAmt ;
+  DTOS(OrderDate) AS OrderYMD ; 
+  FROM Orders INTO CURSOR ListOrders 
+WITH THISFORM.MySimpleList 
+  .cAlias = "ListOrders" 
+  .cData = "OrderID,OrderDate,OrderAmt,OrderYMD" 
+  .cColumnHeaders = "Order ID,Date,Amount" 
+  .cColumnWidths = "200,80,100,0" 
+  .lSorted = .T. 
+  .cSortColumns = "0,4,0" 
+  .PopulateList 
+ENDWITH
+
+This will produce a list with four columns, containing respectively the order ID, order date (in the current SET DATE format), order amount, and order date (in YYYYMMDD format). The last of these columns will be invisible. The list will initially be in order ID sequence. When the user clicks on the second column header, the list will be properly sorted to date sequence.
+
+Checkboxes
+
+If you have ever wanted to give your users a scrolling list of checkboxes, you will find this feature indispensable. Essentially, it lets you display a checkbox against each item in the list. This provides an intuitive way of making multiple selections, for example, to let the user choose the customers who are to appear in a report, or the reports that you want to send to a batch-printing process (see Figure 4 for an example).
+
+
+
+Figure 4: Displaying checkboxes in a list.
+
+The following properties are relevant to checkboxes:
+
+lCheckBoxes
+This is the master switch for checkboxes. Set it to .T. if you want a checkbox to appear against each item (in all four views). The default setting is .F.
+
+cCheckField
+The name of a logical field in the underlying cursor which maps to the item's checkbox. If, for any given record, the field contains .T., the corresponding item's checkbox will appear checked. If the property is empty, all checkboxes will appear unchecked.
+
+lUpdateCheckbox
+By default, SimpleList does not update the cursor when the user clicks on a checkbox. Set this property to .T. if you want the logical field in the cursor (the one specified in cCheckField) to be updated to reflect the state of the checkbox. It is your responsibility to ensure that the cursor is readwrite.
+
+To determine if the checkbox for a given item is checked, call the GetChecked method (see Retrieving information, below).
+
+Editing an item's text
+
+By default, your list will be read-only. However, you can optionally give the user the ability to edit an item's text. This applies in all four views, but in detail view only the left-most column can be edited. To edit an item's text, the user simply clicks once on the text.
+
+To enable editing, use these properties:
+
+lReadOnly
+Set this to .F. to enable editing (the default is .T.). 
+
+lUpdate
+Set this to .T. to enable the edits to be written to the underlying cursor (the default is .F.). It is your responsibility to ensure that the cursor is readwrite.
+
+If lReadOnly and lUpdate are both .F., the user will still be able to edit the item, but the edits will not be processed in any way. In that case, you can write your own code to process the edits in the native AfterLabelEdit event of the ListView control.  
+
+Drag and drop
+
+SimpleList supports drag-and-drop. However, this is not enabled by default. If you choose to enable it, the user will be able to drag an item out of the list and drop it in any control or application that knows how to receive it. In each case, the target control or application will receive a text string.
+
+SimpleList cannot itself act as a drop target. In other words, you can drag items from the list, but you cannot drag anything to it.
+
+To use drag-and-drop, set the following properties:
+
+lDragEnabled
+Set this to .T. to enable drag-and-drop.
+
+nDragText
+This defines the text that the target control or application will receive, as follows:
+
+0 (default):
+The text associated with the currently selected item (in detail view, this is the text in the left-most column). 
+
+positive integer: 
+The text from the corresponding column for the currently selected item (although the columns only show up in detail view, this setting works the same in all four views). 
+
+-1: 
+The currently selected item's tooltip text (if any). 
+
+-2: 
+The record number of the currently selected item's record in the underlying cursor. 
+
+If you want a native Visual FoxPro control to receive the dragged text, set that control's oleDropMode property to 1. 
+
+Cosmetic settings
+
+These settings can be used to modify the appearance of your list:
+
+lFullRowSelect
+If .T., the entire row will be highlighted when the user clicks on an item in detail view. If .F. (which is the default), only the left-most column will be highlighted.
+
+lGridLines
+Set this to .T. if you want grid lines to appear in detail view. The default setting is .F.
+
+lHotTracking
+If .T., the mouse pointer will appear as a pointing finger, and the item's text will be read-only (regardless of the setting of lReadOnly). This applies to all four views. The default setting is .F.
+
+The above setting take effect straight away (there is no need to call PopulateList, RefreshList or RedrawList, as in the previous version).
+
+Retrieving information
+
+So far, we have seen how to populate the list and customise its appearance. Let's now see how to get information about what's in the list and which item the user has selected.
+
+cSelectedText
+This property contains the text of the currently selected item (or blank if the list is empty).
+
+nSelectedIndex
+This one contains the index number of the currently selected item (or 0 if the list is empty). The index is the sequence number (starting from 1) of the item, in the current sort order (thus, the index numbers will change each time the user clicks on a column header to sort the list).
+
+nSelectedRecno
+This property contains the record number in the underlying cursor corresponding to the currently selected item (or 0 if the list is empty). Unlike nSelectedIndex, it does not change if the list is sorted.
+
+nCount
+This contains the number of items in the list.
+
+Note that the above four properties are read-only.
+
+SelectItem
+Call this method to programmatically select an item. Pass the index number of the required item as a parameter. To ensure that the selected item will be immediately visible in the list without scrolling, pass .T. as the second parameter (this is the default behaviour).
+
+GetText
+This method returns the text of the item whose index number is passed as a parameter.
+
+GetRecno
+This one returns the associated record number of the item whose index is passed as a parameter.
+
+GetChecked
+And this one returns the checkbox status (.T. or .F.) of the item whose index is passed as a parameter.
+
+Those last three methods allow you to loop through the items in the list, performing some action on each of them. For example, given a list like the one in Figure 4 above, the following code would print the selected reports:
+
+LOCAL lnI, lcReport 
+WITH THISFORM.MySimpleList 
+  FOR lnI = 1 to .nCount 
+    IF .GetChecked(lnI) 
+      * Item is checked 
+      lcReport = .GetText(lnI) 
+      REPORT FORM "&lcReport" TO PRINTER NOCONSOLE 
+    ENDIF 
+  ENDFOR
+ENDWITH
+
+Synchronising the cursor
+
+By default, there is no connection between the highlight within the list and record pointer in the underlying cursor. However, you can change that behaviour by setting this property:
+
+lLink
+Set this to .T. to synchronise the cursor with the list. When the user moves the highlight in the list, SimpleList will move the record pointer to the corresponding record in the underlying cursor. However, the reverse is not true; moving the record pointer will not affect the highlight.
+
+Event Trapping
+
+SimpleList provides three events for trapping the user's mouse and keyboard actions:
+
+Click
+SimpleList's Click event is fired whenever the user left- or right-clicks anywhere in the control (not necessarily on an item). To determine which item, if any, was selected at the time of the click, use cSelectedText, nSelectedIndex or nSelectedRecno (described above).
+
+DblClick
+Similarly, this event is fired whenever the user double-clicks in the control.
+
+Unfortunately, there is no way of distinguishing between left- and right-clicks or between left- and right-double-clicks.
+
+InteractiveChange
+This event is fired when the user selects an item. More specifically, it is fired when the user clicks with the mouse or presses one of the cursor movement keys. These keys are: Up, Down, Left, Right, Home, End, PgUp and PgDn (in each case, the event is fired regardless of the state of the Shift, Alt or Ctrl keys). It is therefore not strictly an InteractiveChange event, as it also fires if the user hits a cursor movement key without actually changing anything (for example, if Up is pressed when the highlight is already on the first item).
+
+Things that can go wrong
+
+SimpleList does some basic error-checking on the values that you place in its properties. If all is well, PopulateList and RefreshList will each return zero. If either of these methods detects an error, their behaviour will depend on the setting of the following property:
+
+lError
+If .F. (the default), PopulateList and RefreshList will return a non-zero number to indicate an error (see below). If .T., SimpleList will pass the error to your error-handler or Error method, or to VFP's built-in error-handler. The error message will vary depending on the nature of the error, but will always start with "SimpleList Error:".
+
+The error codes returned by PopulateList and RefreshList are as follows:
+
+1 cAlias contains an invalid cursor name, or the cursor could not be accessed. 
+2 cData is empty or contains invalid field names. 
+3 cData contains field names that are not present in the cursor. 
+4 cIconField contains an invalid field name. 
+5 cTooltipField contains an invalid field name. 
+6 cCheckField contains an invalid field name. 
+
+Lifting the lid
+
+If you are interested in learning about SimpleList's internal workings, you can open it in Visual FoxPro's class designer and study its code.
+
+You will notice that the SimpleList control is in fact a VFP container, which in turn contains the ListView ActiveX control. All the properties and methods that we have described in this article belong to the container rather than the ListView.
+
+The reason for this approach is simple. If we ever decide to use a different type of control to display our lists, we could remove the ListView from the container and put the new control in its place. It's true that we might have to rewrite most or all of the SimpleList code, but the point is that we could do so without changing the external workings of the control - its public interface.
+
+This is a good example of separating the interface of a component from its implementation - always a desirable goal. It means that however much we might change SimpleList's internals, it won't affect any of the programs which use it.
+
+Distributing your application
+
+In order to install SimpleList with your application, be sure to distribute the Microsoft ListView ActiveX control, which is MSCOMCTL.OCX. This should be installed in the user's System folder and registered as an ActiveX control. If you are not sure how to do that, check the Help for InstallShield Express.
+
+New features in Version 1.1
+
+Here is a summary of the new features in SimpleList Version 1.1. These are all documented in the main part of this article.
+
+-  Ability to synchronise the cursor with the list (lLink property). 
+
+-  Ability to ensure that an item is visible without scrolling when it is programmatically selected (SelectItem method). 
+
+-  Option to raise a VFP error when SimpleList detects an invalid property setting (lError property). 
+
+-  Mapping of checkboxes to a logical field in the cursor (this was previously documented but not implemented). 
+
+-  Better support for editing an item's text (lUpdate property). 
+
+-  Updating of logical fields mapped to checkboxes (lUpdateCheckbox property). 
+
+-  Drag-and-drop support (lDragEnabled and nDragText properties). 
+
+-  The Redraw method is no longer required when certain cosmetic properties are changed. 
+
+-  Fixes to several minor problems and documentation errors. 
+
+How to download SimpleList
+
+If you do not already have a copy of SimpleList, you can download it now, from www.ml-consult.co.uk/foxst-28.htm. This page will always contain the latest copy of SimpleList. 
+
+The download file is named SIMPLELIST.ZIP. This zip file contains a class library, which in turn contains the SimpleList control. It also contains this document in both HTML and text format.
+
+We hope you find SimpleList as useful in your applications as we do in ours. As always, we greatly welcome your feedback (for contact details, please see www.ml-consult.co.uk/MLCCntct.htm).  
+
+Mike Lewis Consultants Ltd. September 2002. Revised March 2003.
+ 

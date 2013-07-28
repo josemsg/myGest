@@ -1,0 +1,78 @@
+
+Structure for table:  PARTES_CAB.DBF (Partes_cab)   
+Number of records:    0
+Date of last update:  10/27/10
+Memo file block size: 64
+Code Page:            1252
+Num     Field Name      Type    Width   Dec     Nulls   Default
+  1     SUBMISSIONDATE                   C         50    0        No      
+  2     STARTTIME                       C         50    0        No      
+  3     ENDTIME                         C         50    0        No      
+  4     DEVICEID                        C         25    0        No      
+  5     SUBSCRIBERID                    C         25    0        No      
+  6     DATOS_CLIENTE                   C       200     0        No      
+  7     CLNAME                          C         40    0        No      
+  8     CLCODE                          C          5    0        No      
+  9     OPER1_ID                        C          5    0        No      
+ 10     OPER2_ID                        C          5    0        No      
+ 11     FECHA                           C         50    0        No      
+ 12     HORADESDE                       C          2    0        No      
+ 13     MINUTOSDESDE                    C          2    0        No      
+ 14     HORAHASTA                       C          2    0        No      
+ 15     MINUTOSHASTA                     C          2    0        No      
+ 16     CONFIRMACIONHORAS                C          3    0        No      
+ 17     LIMPIEZAS                       C        254     0        No      
+ 18     QUIMICOS                        C        254     0        No      
+ 19     NIVELAGUAPISCINA                C          1    0        No      
+ 20     NIVELAGUACASCADA                C          1    0        No      
+ 21     METEO                           C         10    0        No      
+ 22     CONSUMOQUIMICOS                  C        254     0        No      
+ 23     FOTO                            C        254     0        No      
+ 24     LOCATION_LATITUDE               C        20    0        No      
+ 25     LOCATION_LONGITUDE              C         20    0        No      
+ 26     LOCATION_ALTITUDE               C        10    0        No      
+ 27     LOCATION_ACCURACY               C        10    0        No      
+ 28     OBSERVACIONES                   C        254     0       No      
+ 29     KEY                             C        254     0        No      
+                                    -----
+                                     2113
+
+
+Additional Field Information:
+
+
+Additional Table Information:
+
+
+Indexes:
+  Type       Tag Name            Key Expression
+  Primary    KEY                 RIGHT(TRIM(KEY),55)
+
+
+Structure for table:  PARTES_LIN.DBF (Partes_lin)
+Number of records:    0
+Date of last update:  10/27/10
+Memo file block size: 64
+Code Page:            1252
+Num     Field Name      Type    Width   Dec     Nulls   Default
+  1     QUIMCODIGO                      C         20    0        No      
+  2     QUIMCANTIDAD                    C         10    0        No      
+  3     QUIMNOMBRE                      C         50    0        No      
+  4     PARENT_KEY                      C        254     0        No      
+  5     KEY                             C        254     0        No      
+                                    -----
+                                      589
+
+
+Additional Field Information:
+
+
+Additional Table Information:
+
+
+Indexes:
+  Type       Tag Name            Key Expression
+  Primary    KEY                 RIGHT(TRIM(KEY),55)
+  Regular    PARENT_KEY           RIGHT(TRIM(PARENT_KEY),55)
+
+

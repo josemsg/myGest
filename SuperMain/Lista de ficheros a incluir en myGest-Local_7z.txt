@@ -1,0 +1,15 @@
+DIRECTORIOS:
+
+blank_archivos
+data
+graphics
+reports
+
+FICHEROS:
+
+blank.htm
+mihtml.htm
+my7unzip.cmd
+mygest.exe
+ruta.kml
+supermain.exe

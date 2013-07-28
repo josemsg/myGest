@@ -1,0 +1,60 @@
+<HTML>
+<TITLE>FoxToXML ReadMe</TITLE>
+<FONT face='tahoma'>
+<H2>FoxToXML Sample</H2></FONT>
+<FONT face='arial'>
+<H3>About This Sample Program</H3>
+FoxToXML.prg is a program file that creates a custom Microsoft Visual FoxPro (VFP) class that uses a VFP cursor or table to create an eXtensible Markup Language (XML) page and an eXtensible Stylesheet Language (XSL) style sheet to display the data.<BR/><BR/>
+
+The VFP class (FoxToXML) has a method that will create an XML file, a method that will create an XSL file, and a method that will create both files. Each method either:
+
+<UL>
+<LI>Takes no parameter and uses the currently open cursor or table to create the XML/XSL files.<P>
+-or-</LI><P>
+<LI>Takes a table name as a parameter to create the files from the specified table.</LI>
+</UL>
+
+The creation of the XML/XSL documents uses native Visual FoxPro 6.0 language and the custom class can be instantiated and used whenever an XML or XSL document is needed. The XML/XSL document names are derived from the cursor or table name.<BR/>
+<BR/>
+Without the XSL file, the XML data will display in hierarchial form. To see how the data will look without the style sheet, create an XML file and delete the "?xml-stylesheet ..." line in the XML file.
+<BR/><BR/>
+
+<H3>Using the FoxToXML Class</H3>
+
+<OL>
+<LI>Create a new program called Test.prg and add the following code:<BR/><BR/>
+<FONT face='courier new'>
+     CD JUSTPATH(SYS(16))<BR/>
+     USE ? && Choose any FoxPro table<BR/>
+     oXML = NEWOBJECT("FoxToXML","FoxToXML.prg")<BR/>
+     oXML.BOTH<BR/>  
+     ** This will create both an XML and XSL file with the name of the <BR/>
+     ** open table or cursor.<BR/><BR/>
+</FONT>
+</LI>
+<LI>Save the program in the same directory as the FoxToXML.prg file.</LI><P>
+<LI>Run Test.prg.</LI></OL>
+<H3>How It Works</H3>
+The class contains the following methods:
+
+<UL>
+<LI><b>CheckAlias</b> - This method checks to see whether there is a data source. If there is no data source, no XML or XSL file is created.</LI>
+
+<LI><b>UseThisData</b> - This method accepts a table name as a parameter. If the table physically exists and is not currently being used by the current instance of Visual FoxPro, then this method will open the table. If the table is currently open, the table will be selected.</LI>
+
+<LI><b>pTab</b> - This method inserts tab characters into the output files. This is done strictly for readability.</LI>
+
+<LI><b>XSL</b> - This method creates the XSL file and accepts a table name as a parameter. If no table is specified but a table or cursor is open, this method uses that data structure to create the style sheet. The name of the resultant XSL file will be the table or cursor name (for example, MyTable.xsl). </LI>
+
+<LI><b>XML</b> - This method creates the XML file and accepts a table name as a parameter. If no table is specified but a table or cursor is open, this method uses that data to create the XML file. The name of the resultant XML file will be the table or cursor name (for example, MyTable.xml).</LI>
+
+<LI><b>BOTH</b> - This method runs the XML and XSL methods described above.</LI>
+</UL>
+
+<H3>List of Files</H3>
+When this sample is downloaded, the following files are included:
+<UL>
+<LI>FoxToXML.htm - Sample file Readme</LI>
+<LI>FoxToXML.prg - Visual FoxPro program file used to create the FoxToXML class</LI></UL>
+</FONT>
+</HTML>

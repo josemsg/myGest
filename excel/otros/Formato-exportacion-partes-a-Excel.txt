@@ -1,0 +1,103 @@
+En cualquier caso, el formato definitivo sería:
+ 
+COLUMNA DE INICIO
+
+Columna A: Tipo de Registro. Valores posibles
+"C" Cabecera
+"A" Artículo
+"S" Servicio
+"M" Mano de Obra
+"G" Gasto
+
+TIPO REGISTRO CABECERA
+Columna B: Número de Parte (Valor relativo dentro del Excel). Formato Numérico de 9 dígitos.
+Columna C: Tipo de Parte. Valores posibles
+"A" Administración
+"O" Obra
+Columna D: Empresa. Valores posibles
+"A" Trabajo
+"B" Training
+Columna E: Tipo Documento. Valores posibles
+"C" Cargo
+"A" Abono
+Columna F: Código Cliente (Sólo necesario en Partes de Administración). Formato y validaciones igual que en Sitelec.
+Columna G: Código Obra. Formato y validaciones igual que en Sitelec.
+Columna H: Campo variable “char1_al”
+Columna I: Campo variable “char2_al”
+Columna J: Campo variable “char3_al”
+Columna K: Campo variable “char4_al”
+Columna L: Campo variable “char5_al”
+Columna M: Campo variable “char6_al”
+Columna N: Campo variable “char7_al”
+Columna O: Campo variable “char8_al”
+Columna P: Campo variable “dec1_al”
+Columna Q: Campo variable “dec2_al”
+Columna R: Campo variable “dec3_al”
+Columna S: Campo variable “dec4_al”
+Columna T: Campo variable “dec5_al”
+Columna U: Campo variable “dec6_al”
+Columna V: Campo variable “edi1_al”
+Columna W: Campo variable “edi2_al”
+Columna X: Campo variable “fec1_al”
+Columna Y: Campo variable “fec2_al”
+Columna Z: Campo variable “fec3_al”
+Columna AN: Observaciones. Formato y validaciones igual que en Sitelec.
+Columna AQ: Referencia del parte
+Columna AR: Fecha del parte
+
+Consideraciones del Tipo de Registro Cabecera:
+- La fecha de registro se grabará con la fecha de proceso.
+- Empleado: Se grabará el código de empleado relacionado con el usuario que realiza la carga de los partes.
+- Resto de datos de la cabecera: Se inicializarán a partir de los datos informados en el resto de columnas, y siguiendo el mismo criterio que la alta de partes de Sitelec.
+
+TIPO REGISTRO ARTICULO/SERVICIO
+Columna AA: Numero de Parte( Número relativo dentro del Excel para agrupar una cabecera de parte con sus líneas). Formato y validaciones igual que en Sitelec.
+Columna AB: Cantidad. Formato y validaciones igual que en Sitelec.
+Columna AC: Fecha Imputación. Formato y validaciones igual que en Sitelec.
+Columna AD: Código Artículo. Formato y validaciones igual que en Sitelec.
+Columna AE: Capítulo de la obra (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AF: Código de Actividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AG: Código de SubActividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AH: Número de Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AO: Versión del Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AP: Anexo del Presupuesto. (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+
+Consideraciones del Tipo de Registro Artículo/Servicio:
+- Los datos relacionados con el artículo, tales como descripción, iva, coste, precio, embalaje, etc,  se grabarán con el mismo criterio que sigue SITELEC cuando en el alta de partes se informan los campos anteriormente definidos en el excel.
+- La condición de venta no se informará en el Excel, estará en función de las condiciones definidas en la aplicación para el artículo.
+
+TIPO REGISTRO MANO DE OBRA
+Columna AA: Numero de Parte( Número relativo dentro del Excel para agrupar una cabecera de parte con sus líneas). Formato y validaciones igual que en Sitelec.
+Columna AC: Fecha Imputación. Formato y validaciones igual que en Sitelec.
+Columna AE: Capítulo de la obra (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AF: Código de Actividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AG: Código de SubActividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AH: Número de Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AI: Código de Operario. Formato y validaciones igual que en Sitelec.
+Columna AJ: Código de Tipo de Hora. Formato y validaciones igual que en Sitelec.
+Columna AK: Horas Imputables. Formato y validaciones igual que en Sitelec.
+Columna AL: Horas Trabajadas. Formato y validaciones igual que en Sitelec.
+Columna AM: Horas Facturables (Sólo válidas para Partes de Administración). Formato y validaciones igual que en Sitelec.
+Columna AO: Versión del Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AP: Anexo del Presupuesto. (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+
+Consideraciones del Tipo de Registro Mano de Obra:
+- Los datos relacionados con la mano de obras, tales como descripción, iva, coste, precio, etc,  se grabarán con el mismo criterio que sigue SITELEC cuando en el alta de partes se informan los campos anteriormente definidos en el excel.
+- Las imputaciones deberán ser menores a 24 horas, y no deberán utilizarse calendarios de operarios.
+
+TIPO REGISTRO GASTO
+Columna AA: Numero de Parte( Número relativo dentro del Excel para agrupar una cabecera de parte con sus líneas). Formato y validaciones igual que en Sitelec.
+Columna AB: Cantidad. Formato y validaciones igual que en Sitelec.
+Columna AC: Fecha Imputación. Formato y validaciones igual que en Sitelec.
+Columna AD: Código Gasto. Formato y validaciones igual que en Sitelec.
+Columna AE: Capítulo de la obra (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AF: Código de Actividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AG: Código de SubActividad (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AH: Número de Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AI: Código de Operario. Formato y validaciones igual que en Sitelec.
+Columna AO: Versión del Presupuesto (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+Columna AP: Anexo del Presupuesto. (Sólo Obligatorio cuando así se defina en la ficha de la obra) Formato y validaciones igual que en Sitelec.
+
+Consideraciones del Tipo de Registro Gasto:
+- Los datos relacionados con el artículo, tales como descripción, iva, coste, precio, embalaje, etc,  se grabarán con el mismo criterio que sigue SITELEC cuando en el alta de partes se informan los campos anteriormente definidos en el excel.
+- La condición de venta no se informará en el Excel, estará en función de las condiciones definidas en la aplicación para el artículo.

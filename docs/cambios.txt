@@ -1,0 +1,1 @@
+09.12.10 En la tabla 'Partes' y 'Pre_partes', se ha cambiado la longitud de los campos 'clname' y 'clcomer' a 70 Varchar

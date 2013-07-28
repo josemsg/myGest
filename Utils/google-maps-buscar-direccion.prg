@@ -1,0 +1,151 @@
+*!*	Hace unos días, Luis Maria Guayan publico el artículo Google Maps en un formulario de VFP que mostraba un ejemplo de como acceder a diferentes localizaciones en Google Maps mediante sus coordenadas terrestres
+*!*	Al ver y probar el codigo publicado, enseguida me surgio la inquietud de adaptarlo a una búsqueda por la dirección postal en lugar de por sus coordenadas que, normalmente, no conozco.
+*!*	Luis Maria me remitió a otro articulo Integrando VFP con Microsoft Virtual Earth que mostraba un ejemplo muy completo de como realizar búsquedas (y muchas más cosas) sobre Virtual Earth.
+*!*	Como el código de Luis Maria era más sencillo (y se ajustaba mejor a mis necesidades), decidí revisar la API de Google Maps para implementar la búsqueda por la dirección postal.
+*!*	Antes de pasar al código, debo hacer varias aclaraciones sobre éste:
+*!*	En primer lugar, este código puede ser ejecutado con do "MiPrograma.prg" con lo que, al abrirse el formulario, podremos introducir la dirección a buscar, o bien podremos ejecutarlo con do "MiPrograma.prg" with "direccion a buscar", con lo que, al abrirse el formulario, se realizará la búsqueda de la dirección introducida directamente.
+*!*	En segundo lugar, vereis que al ejecutar el código, el formulario abierto no tiene barra de título, pero esto no significa que no pueda ser movido. Sólo teneis que pinchar sobre una zona libre del formulario y arrastrar con el ratón. El truco reside en dos llamadas a la API en el Load del formulario y el evento MouseDown de este.
+*!*	Tambien, al hacer las diferentes pruebas, me encontre con que las búsquedas de direcciones que contenían "eñes" no se realizaban correctamente pero, si las sustituía por "enes", la búsqueda era correcta. Ese es el motivo de haber utilizado la función strtran, sólo a efectos de búsqueda.
+*!*	Por último, mi agradecimiento a todas las personas que en el foro contestaron a mis dudas, y en especial a Luis Maria Guayan, sin cuya colaboración y apoyo, este mi primer artículo, no habría visto nunca la luz.
+*!*	Y ahora, el código completo de este ejemplo es el siguiente:
+
+Do MiPrograma With "Puerta de Alcala, Madrid, España"
+
+*
+* MiPrograma.prg
+*
+Procedure MiPrograma
+  Lparameters MiAddress
+  Public oMiForm
+  oMiForm = Createobject("MiForm", MiAddress)
+  oMiForm.Show
+  Return
+Endproc
+
+Define Class MiForm As Form
+  Height = 560
+  Width = 625
+  AutoCenter = .T.
+  Caption = "Ejemplo con Google Maps"
+  Name = "MiForm"
+  SetPoint = ""
+  SetDecimals = 2
+  ShowWindow = 0
+  TitleBar = 0
+  BorderStyle = 2
+  Closable = .F.
+  MaxButton = .F.
+  MinButton = .F.
+
+  Add Object Descrip As TextBox With ;
+    HEIGHT = 24, Left = 12, Top = 12, Width = 330, ;
+    STYLE = 0, Name = "Descrip", SelectOnEntry = .T., Enabled = .T.
+
+  Add Object cmdMostrar As CommandButton With ;
+    TOP = 10, Left = 350, Height = 27, Width = 100, ;
+    CAPTION = "Mostrar mapa", Name = "cmdMostrar"
+
+  Add Object cmdCerrar As CommandButton With ;
+    TOP = 10, Left = 573, Height = 27, Width = 40, ;
+    CAPTION = "Salir", Name = "cmdCerrar"
+
+  Add Object oleIE As OleControl With ;
+    TOP = 48, Left = 12, Height = 500, Width = 600, ;
+    NAME = "oleIE", OleClass = "Shell.Explorer.2"
+
+  Procedure Load
+    Sys(2333,1)
+    This.SetPoint = Set("Point")
+    This.SetDecimals = Set("Decimals")
+    Set Point To .
+    Set Decimals To 8
+    Set Safety Off
+    Declare Integer ReleaseCapture In WIN32API
+    Declare Integer SendMessage In WIN32API Integer, Integer, Integer, Integer
+  Endproc
+
+  Procedure Init(MiAddress)
+    If Type('miaddress')<>'C'
+      This.Descrip.Value=''
+    Else
+      This.Descrip.Value=miaddress
+      Thisform.cmdMostrar.Click()
+    Endif
+  Endproc
+
+  Procedure MouseDown
+    Lparameters nButton, nShift, nXCoord, nYCoord
+    Local lnHandle
+    If nButton = 1
+      ReleaseCapture()
+      SendMessage(This.HWnd, 0x112, 0xF012,0)
+    Endif
+  Endproc
+
+  Procedure cmdCerrar.Click
+    Set Point To (Thisform.SetPoint)
+    Set Decimals To (Thisform.SetDecimals)
+    Thisform.Release
+  Endproc
+
+  Procedure cmdMostrar.Click
+    If Empty(Alltrim(Thisform.Descrip.Value ))
+      Thisform.Descrip.SetFocus()
+      Return
+    Else
+      *
+      lcClave = "http://maps.google.es/maps?file=api&v=2.x&" + ;
+        "key=ABQIAAAAtOjLpIVcO8im8KJFR8pcMhQjskl1-YgiA" + ;
+        "_BGX2yRrf7htVrbmBTWZt39_v1rJ4xxwZZCEomegYBo1w" 
+TEXT TO lcHtml NOSHOW TEXTMERGE
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Busqueda en Google Maps</title>
+    <script src="<<lcClave>>"
+    type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    var map = null
+    var geocoder = null
+    var address = "<<Strtran(ALLTRIM(ThisForm.Descrip.Value),'ñ','n',1,10,1)>>"
+
+    function load()
+    { if (GBrowserIsCompatible())
+      { map = new GMap2(document.getElementById("map"),'G_SATELLITE_MAP');
+        map.addControl(new GLargeMapControl());
+        map.addControl (new GMapTypeControl());
+        map.addControl(new GOverviewMapControl());
+
+        geocoder = new GClientGeocoder();
+        if (geocoder) {
+            geocoder.getLatLng(address,
+          function(point)
+          { if (!point)
+            { alert("No Encontrado");
+             }
+          else
+            { map.setCenter(point, 20);
+            map.setMapType(G_NORMAL_MAP);
+            var marker = new GMarker(point);
+            map.addOverlay(marker);
+            }
+          }
+         );
+       }
+      }
+    }
+    //]]>
+    </script>
+  </head>
+  <body  scroll="no" bgcolor="#CCCCCC" topmargin="0" leftmargin="0" onload="load()" onunload="GUnload()">
+  <div id="map" style="width: 600px; height: 500px"></div>
+  </body>
+</html>
+ENDTEXT
+      *
+      Strtofile(lcHtml,"MiHtml.htm")
+      Thisform.oleIE.Navigate2(Fullpath("MiHtml.htm"))
+    Endif
+  Endproc
+Enddefine

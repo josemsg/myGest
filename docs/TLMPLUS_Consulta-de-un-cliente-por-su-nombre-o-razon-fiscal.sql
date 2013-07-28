@@ -1,0 +1,1 @@
+select cod_cli, nom_cli, raz_cli from pub.gmclien where gmclien.raz_cli LIKE '`%%lcNombre%`%' or gmclien.nom_cli LIKE '`%%lcNombre%`%'

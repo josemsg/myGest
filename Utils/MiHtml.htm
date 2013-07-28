@@ -1,0 +1,25 @@
+    <html> <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps</title>
+    <script src="http://maps.google.com/maps?file=api&v=2&key=123" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    function load()
+    { if (GBrowserIsCompatible())
+      { var map = new GMap2(document.getElementById("map"),G_SATELLITE_MAP);
+      map.addControl(new GLargeMapControl());
+      map.addControl(new GMapTypeControl());
+      map.addControl(new GOverviewMapControl());
+      
+      var point = new GLatLng(38.960647, 1.281259);
+		map.setCenter(point, 20);
+		map.setMapType(G_HYBRID_MAP);
+		var marker = new GMarker(point);
+		map.addOverlay(marker);
+		marker.openInfoWindowHtml('Casa David                              ');
+    } }
+    //]]> </script> </head>
+    <body scroll="no" bgcolor="#CCCCCC" topmargin="0" leftmargin="0"
+    onload="load()" onunload="GUnload()">
+    <div id="map" style="width:100%;height:100%"></div>
+    </body> </html>

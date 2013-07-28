@@ -1,0 +1,110 @@
+Link completo
+http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=38.9017671,1.22777044+(Casa+Paula)&aq=&sll=40.396764,-3.713379&sspn=8.98239,12.019043&ie=UTF8&ll=38.900285,1.231177&spn=0.013627,0.017488&t=h&z=16&iwloc=A
+
+Link simplificado
+http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q=38.9017671,1.22777044+(Casa Paula - Gianni Richieri)&t=h&z=16&iwloc=A
+
+PARAMETROS
+Here are some of the parameters. There may well be many more 
+ll      Latitude and longitude of the centre point (note the order!) 
+spn     Approximate lat/long span. 
+        The zoom level will be adjusted to fit. 
+hl      Sets the language. &hl=fr forces the associated text to be in 
+        French instead of using the user's default language. 
+t       Sets the map type. &t=k for satellite, &t=h for hybrid 
+saddr   Source address for driving directions 
+daddr   Destination address for driving directions 
+num     Maximum number of matches to display 
+start   Skips the nearest (start-1) matches 
+
+
+CODIFICACIÓN GEOGRÁFICA MEDIANTE SOLICITUDES HTTP
+También puedes acceder al geocoder del API de Google Maps directamente mediante secuencias de
+comandos de servidor. No se recomienda el uso de este método frente al uso del geocoder de
+cliente; no obstante, resulta útil con fines de depuración, en aquellos casos en los que no hay
+un objeto GClientGeocoder de JavaScript disponible.
+Para acceder al geocoder del API de Google Maps, envía una solicitud
+a http://maps.google.com/maps/geo? con los siguientes parámetros en el URI:
+
+q (obligatorio)       — La dirección a la que deseas asignar un identificador geográfico.
+key (obligatorio)     — Tu clave del API.
+sensor (obligatorio)  — Indica si la solicitud de codificación geográfica proviene o no de un
+                        dispositivo con sensor de ubicación. Este valor debe ser true o false.
+output (obligatorio)  — El formato en el que se debe generar el elemento de salida. Las opciones
+                        son xml, kml, csv o (predeterminado) json.
+ll (opcional)         — El par {latitud,longitud} del centro de la ventana gráfica expresado
+                        como una cadena separada por comas (por ejemplo, 
+                        "ll=40.479581,-117.773438" ). Este parámetro sólo adquiere significado
+                        si el parámetro spn también se transmite al geocoder.
+spn (opcional)        — La "amplitud" de la ventana gráfica expresada como una cadena separada
+                        por comas de un par {latitud,longitud} (por ejemplo, "spn=11.1873,22.5" ).
+                        Este parámetro sólo adquiere significado si el parámetro ll también se
+                        transmite al geocoder.
+gl (opcional)         — El código de país, especificado como un valor de dos caracteres ccTLD
+                        ("dominio de nivel superior").
+
+Nota: The gl and spn,ll viewport parameters will only influence, not fully restrict, 
+results from the geocoder.
+
+En este ejemplo, solicitamos las coordenadas geográficas de la sede principal de Google:
+http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=xml&sensor=true_or_false&key=abcdefg
+
+En este ejemplo, hemos dejado el parámetro sensor como una variable true_or_false para hacer
+hincapié en que debes definir este valor en true o false de forma explícita.
+Si especificas json como formato de salida, la respuesta se proporciona en forma de objeto JSON.
+Si especificas xml o kml, la respuesta se devuelve en código KML. Los resultados en formato XML
+y KML son idénticos, excepto por los tipos MIME.
+Por ejemplo, esta es la respuesta que devuelve el codificador geográfico para
+"1600 amphitheatre mountain view ca".
+
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Response>
+    <name>1600 amphitheatre mountain view ca</name>
+    <Status>
+      <code>200</code>
+      <request>geocode</request>
+    </Status>
+    <Placemark>
+      <address> 
+        1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA
+      </address>
+      <AddressDetails Accuracy="8">
+        <Country>
+          <CountryNameCode>US</CountryNameCode>
+          <AdministrativeArea>
+            <AdministrativeAreaName>CA</AdministrativeAreaName>
+           <SubAdministrativeArea>
+             <SubAdministrativeAreaName>Santa Clara</SubAdministrativeAreaName>
+             <Locality>
+               <LocalityName>Mountain View</LocalityName>
+               <Thoroughfare>
+                 <ThoroughfareName>1600 Amphitheatre Pkwy</ThoroughfareName>
+               </Thoroughfare>
+               <PostalCode>
+                 <PostalCodeNumber>94043</PostalCodeNumber>
+               </PostalCode>
+             </Locality>
+           </SubAdministrativeArea>
+         </AdministrativeArea>
+       </Country>
+     </AddressDetails>
+     <Point>
+       <coordinates>-122.083739,37.423021,0</coordinates>
+     </Point>
+   </Placemark>
+  </Response>
+</kml>
+
+Si prefieres una respuesta más breve, que resulte más sencilla de analizar, y no necesitas
+funciones especiales como resultados múltiples o un formato elegante, también proporcionamos
+resultados en formato csv. Una respuesta devuelta en formato csv consta de cuatro números, 
+separados por comas:
+  1. código de estado HTTP
+  2. Precisión (Consulta las constantes de precisión)
+  3. Latitud
+  4. Longitud
+Los siguientes ejemplos muestran las respuestas a tres direcciones, 
+ordenadas de menor a mayor precisión: "State St, Troy, NY", "2nd st & State St, Troy, NY" and "7 State St, Troy, NY"
+200,6,42.730070,-73.690570
+200,7,42.730210,-73.691800
+200,8,42.730287,-73.692511

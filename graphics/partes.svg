@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="32px"
+   height="32px"
+   id="svg2194"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="partes.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="C:\miCodigo\mySQLBase\myGestion\appGraficos\albaranes.png"
+   inkscape:export-xdpi="73"
+   inkscape:export-ydpi="73"
+   version="1.1">
+  <defs
+     id="defs2196">
+    <marker
+       inkscape:stockid="TriangleOutL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutL"
+       style="overflow:visible">
+      <path
+         id="path3276"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path3199"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.9590209"
+     inkscape:cx="30.307135"
+     inkscape:cy="8.5948437"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:grid-bbox="true"
+     inkscape:document-units="px"
+     inkscape:window-width="842"
+     inkscape:window-height="645"
+     inkscape:window-x="275"
+     inkscape:window-y="221"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2199">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:#ffffff;fill-opacity:0.33333333;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 14.655139,11.561055 C 11.041164,11.561055 7.8101533,12.717938 5.6937567,14.520814 L 5.6937567,22.038076 L 23.989915,22.038076 L 23.943241,14.808932 C 21.841334,12.835841 18.464687,11.561055 14.655139,11.561055 z "
+       id="path2206"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <rect
+       style="opacity:1;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2191"
+       width="21.432777"
+       height="24.105986"
+       x="5.5"
+       y="2.3940144"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 15.98528,4.9106968 L 24.558391,5 L 24.469088,9 L 16,9"
+       id="path3216"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 16,9 L 16,5"
+       id="path3218"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7,5 C 6.9375257,5.5432547 8,4.261147 8,6 C 8,6.115152 7.8709029,5 9,5 C 9,5.3693041 10,5.1076336 10,5.4769377 C 10,5.6359169 10,5.1589792 10,5"
+       id="path3220"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 13,5 C 13,5.2987184 11,4.176178 11,6 C 11,8.2217856 14.503217,5.4769377 12.502454,5.4769377 C 12.343474,5.4769377 12.502454,5.1589792 12.502454,5"
+       id="path3222"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 10.537782,4 C 10.38371,4 10.845927,4 11,4 C 11.154073,4 10.691855,4 10.537782,4 C 10.050376,4 11.512594,4 12,4"
+       id="path3224"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7,7 C 6.6834906,7 7.2011259,6.5485766 7.5014722,6.5485766"
+       id="path3226"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 8.4838078,6 C 7.9784104,6 9.4946026,6 10,6"
+       id="path3228"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9,7 C 8.9874063,7 9.9435351,7 10,7"
+       id="path3230"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7,9 L 11,9"
+       id="path3234"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7.5014722,11.549558 L 25,11.549558 L 25,23 L 7.4121689,23 L 7.5014722,11.549558 z "
+       id="path3236"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 8.573111,14 L 23.576055,14"
+       id="path3238"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9,16 L 12,16"
+       id="path3240"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9,18 L 12,18"
+       id="path3242"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9.0605748,18.963772 L 12.060575,18.963772"
+       id="path3244"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9.5267188,20.515293 L 12.060575,20.515293"
+       id="path3246"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 13,16 L 19,16"
+       id="path3248"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 13,18 L 19,18"
+       id="path3250"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 13.060575,18.963772 L 19.060575,18.963772"
+       id="path3252"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 13.060575,20.515293 L 19.060575,20.515293"
+       id="path3254"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 20.539745,16 L 23,16"
+       id="path3256"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 21,18 L 23,18"
+       id="path3260"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 20.60032,18.963772 L 23.060575,18.963772"
+       id="path3262"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 20.60032,20.963772 L 23.060575,20.963772"
+       id="path3264"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <rect
+       style="opacity:1;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:#00ff00;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3282"
+       width="25.93425"
+       height="10.749755"
+       x="3.0605738"
+       y="18.963772"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-ydpi="106.91384" />
+    <text
+       transform="scale(0.8705574,1.1486893)"
+       inkscape:export-ydpi="106.91384"
+       inkscape:export-xdpi="106.91384"
+       inkscape:export-filename="I:\MiCodigo\myGest\graphics\partes.png"
+       id="text3266"
+       y="24.090006"
+       x="4.4225502"
+       style="font-size:9.59977913px;font-style:normal;font-weight:normal;fill:#280b0b;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial"
+       xml:space="preserve"><tspan
+         y="24.090006"
+         x="4.4225502"
+         id="tspan3268"
+         sodipodi:role="line">Partes</tspan></text>
+  </g>
+</svg>

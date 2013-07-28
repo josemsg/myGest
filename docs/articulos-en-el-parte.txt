@@ -1,0 +1,19 @@
+<DESCRIPCION>                 <CODIGO>      <UNIDAD>          
+OTRO producto                 otro          xxxxxxxx    
+Cloro granulado, kg           G0465         KG    
+Cloro pastillas, Ud           G0451         PASTILLAS    
+Ph PLUS, kg                   03111         KG    
+Ph MINUS, kg                  03108         KG    
+Salfumant, botellas           420112500004  BOTELLAS    
+Cloro liquido, litros         10010016      LTS    
+Floculante liquido, litros    03118         LTS    
+Floculante, cartuchos         08616         CARTUCHO    
+Antialgas, litros             03207         LTS
+Diatomeas                     03247         KILOS    
+Sal, Sacos                    SAL25         SACO    
+Recojehojas clip              01397         UD    
+Recojehojas palomilla         01396         UD    
+Compuerta skimmer             4402010101    UD    
+Cesto skimmer                 442010103     UD    
+Cesto prefiltro Aquamar/Doll  4405010304    UD   
+Tapa prefiltro Aquamar/Doll   4405010102    UD  

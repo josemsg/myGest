@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:gx='http://www.google.com/kml/ext/2.2' xmlns:kml='http://www.opengis.net/kml/2.2' xmlns:atom='http://www.w3.org/2005/Atom'>
+<Document id='odk_kml'>
+  <name>Parte-v2-30</name>
+  <open>1</open>
+  <Snippet maxLines='0'></Snippet>
+  <description>KML file showing results from ODK form: Parte-v2-30</description>
+<Style id='odk_style'>
+  <BalloonStyle>
+    <text>
+      <![CDATA[
+        <table width='300' cellpadding='0' cellspacing='0'>
+        <tr><td><h2>$[__name]</h2></td></tr>
+        <tr><td align='center'><img style='padding:5px' height=50% width=100% src='$[__imgUrl]' /></td></tr>
+        <tr><td align='center'><table border='1' style='border-collapse: collapse;' >
+          <tr><td><b>Nº de parte</b></td><td>$[ParteID]</td></tr>
+          <tr><td><b>Nº de obra</b></td><td>$[obra_id]</td></tr>
+          <tr><td><b>Código</b></td><td>$[clcode]</td></tr>
+          <tr><td><b>N. Comercial</b></td><td>$[clcomer]</td></tr>
+          <tr><td><b>N. Fiscal</b></td><td>$[clname]</td></tr>
+          <tr><td><b>Fecha</b></td><td>$[fecha]</td></tr>
+          <tr><td><b>Hora desde</b></td><td>$[hora_desde]</td></tr>
+          <tr><td><b>Hora hasta</b></td><td>$[hora_hasta]</td></tr>
+          <tr><td><b>Operario 1</b></td><td>$[id_operario1]</td></tr>
+          <tr><td><b>Operario 2</b></td><td>$[id_operario2]</td></tr>
+          <tr><td><b>Operario 3</b></td><td>$[id_operario3]</td></tr>
+          <tr><td><b>Limpieza del Fondo</b></td><td>$[limpieza_del_fondo]</td></tr>
+          <tr><td><b>Observaciones</b></td><td>$[observaciones]</td></tr>
+          </table></td></tr></table>
+      ]]>
+    </text>
+  </BalloonStyle>
+</Style>
+<Placemark id='1'>
+  <name>(00000001) JUAN ALBERTO FERNANDEZ</name>
+  <styleUrl>#odk_style</styleUrl>
+  <Snippet maxLines='0'></Snippet>
+  <ExtendedData>
+    <Data name='__name'><value>(00000001) JUAN ALBERTO FERNANDEZ</value></Data>
+    <Data name='__imgUrl'><value>Z:\mySQLdata\DataDir\mypartes\Fotos\00000002-01.jpeg</value></Data>
+    <Data name='ParteID'><value>00000001</value></Data>
+    <Data name='obra_id'><value>8</value></Data>
+    <Data name='clcode'><value>23</value></Data>
+    <Data name='clcomer'><value>JUAN ALBERTO - DENTISTA</value></Data>
+    <Data name='clname'><value>JUAN ALBERTO FERNANDEZ</value></Data>
+    <Data name='fecha'><value>02/03/2011</value></Data>
+    <Data name='hora_desde'><value>08:30</value></Data>
+    <Data name='hora_hasta'><value>09:05</value></Data>
+    <Data name='id_operario1'><value>23</value></Data>
+    <Data name='id_operario2'><value>0</value></Data>
+    <Data name='id_operario3'><value>0</value></Data>
+    <Data name='limpieza_del_fondo'><value>SI</value></Data>
+    <Data name='observaciones'><value>La llave de la caseta no cierra bien. La he dejado abierta.</value></Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>1.29913330078125,38.986583948135376,70.0</coordinates>
+  </Point>
+</Placemark>
+</Document>
+</kml>
