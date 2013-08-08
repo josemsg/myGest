@@ -148,12 +148,26 @@ lcFecha = ALLTRIM(STR(lnDia))+"/"+ALLTRIM(STR(lnMes))+"/"+ALLTRIM(STR(lnAño))
 ldtFechaHora = CAST(lcFecha+" "+lcHora as Datetime)
 RETURN ldtFechaHora
 
+FUNCTION OdkDateToDateTime2
+LPARAMETERS pcSub
+
+*__ Este es otro formato:
+*__ yyyy-mm-ddThh:mm:ss
+LOCAL lnDia, lnMes, lnAño, lcHora, lcFecha, ldtFechaHora
+
+lnMes = VAL(SUBSTR(pcSub,6,2))
+lnDia = INT(VAL(SUBSTR(pcSub,9,2)))
+lcHora = PADL(SUBSTR(pcSub,12,8), 8, "0")
+lnAño = INT(VAL(LEFT(pcSub,4)))
+lcFecha = ALLTRIM(STR(lnDia))+"/"+ALLTRIM(STR(lnMes))+"/"+ALLTRIM(STR(lnAño))
+ldtFechaHora = CAST(lcFecha+" "+lcHora as Datetime)
+RETURN ldtFechaHora
+
 *!*	FOR i = 1 TO 5
 *!*		lcStr = GETWORDNUM(pcSub, i, ", ")
 *!*			&& Obtener la iª palabra con delimitadores el espacio y la coma
 *!*		WAIT WINDOW "Palabra nº"+ALLTRIM(STR(I))+" "+ALLTRIM(lcStr)
 *!*	ENDFOR i
-
 
 FUNCTION MesEnNumero
 LPARAMETERS pcMesEnLetra

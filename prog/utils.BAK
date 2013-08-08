@@ -673,7 +673,6 @@ LPARAMETERS cCursor, cTitulo, cCamposSeleccionados
 LOCAL cRepo, nLong, sFont, cFont, cCampos, nMaxCol, sExtra
 
 
-SET STEP ON 
 
 cRepo = SYS(2015) + '.frx'
 *

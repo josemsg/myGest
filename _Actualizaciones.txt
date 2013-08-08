@@ -1,0 +1,21 @@
+Commit v02 2013-08-08
+=====================
+- Cambios en la base de datos myPartes, tabla 'clientes_datos_complementarios',
+  se han añadido los siguientes campos:
+  - mant_cond_esp, tinyint, default 0, es un boolean para marcar si el cliente
+    tiene condiciones especiales o no en su contrato de mantenimiento.
+  - mant_notas, longtext, es un campo de texto para anotar las condiciones especiales.
+  
+- Se ha incorporado un listado y un filtro para poder obtener estos datos
+  desde el selector de clientes.
+
+- Se ha incorporado un nuevo programa de importación de partes, en este caso
+  se le ha llamado 'importación de partes ODK LOCAL', sirve para importar partes
+  que han sido obtenidos directamente del móvil, por lo que nos pide un directorio
+  base y puede importar todos los partes en sus subdirectorios. Una vez importado
+  cada parte, marca con un Log y con un 'procesado.xml' para que no se pueda volver
+  a importar a menos que borremos del directorio el archivo 'procesado.xml'
+
+Commit v01 2013-08-08
+=====================
+- Es el commit inicial

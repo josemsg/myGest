@@ -1,6 +1,6 @@
 *       *********************************************************
 *       *                                                         
-*       * 03/05/13              MAIN.MPR                12:50:57  
+*       * 01/08/13              MAIN.MPR                19:45:18  
 *       *                                                         
 *       *********************************************************
 *       *                                                         
@@ -34,11 +34,11 @@ DEFINE PAD _msm_edit OF _MSYSMENU PROMPT "\<Edición" COLOR SCHEME 3 ;
 	NEGOTIATE  NONE, LEFT ;
 	KEY ALT+E, "" ;
 	MESSAGE "Modifica texto o la selección actual"
-DEFINE PAD _3ry0rjg6b OF _MSYSMENU PROMPT "\<Formularios" COLOR SCHEME 3 ;
+DEFINE PAD _3ug16cbki OF _MSYSMENU PROMPT "\<Formularios" COLOR SCHEME 3 ;
 	KEY ALT+F, ""
-DEFINE PAD _3ry0rjg6c OF _MSYSMENU PROMPT "\<Ruteros" COLOR SCHEME 3 ;
+DEFINE PAD _3ug16cbkj OF _MSYSMENU PROMPT "\<Ruteros" COLOR SCHEME 3 ;
 	KEY ALT+R, ""
-DEFINE PAD _3ry0rjg6d OF _MSYSMENU PROMPT "\<Tareas" COLOR SCHEME 3 ;
+DEFINE PAD _3ug16cbkk OF _MSYSMENU PROMPT "\<Tareas" COLOR SCHEME 3 ;
 	KEY ALT+T, ""
 DEFINE PAD _msm_windo OF _MSYSMENU PROMPT "Ve\<ntana" COLOR SCHEME 3 ;
 	NEGOTIATE  RIGHT, LEFT ;
@@ -50,9 +50,9 @@ DEFINE PAD _msm_systm OF _MSYSMENU PROMPT "Ay\<uda" COLOR SCHEME 3 ;
 	MESSAGE "Muestra Ayuda acerca de Visual FoxPro"
 ON PAD _msm_file OF _MSYSMENU ACTIVATE POPUP _mfile
 ON PAD _msm_edit OF _MSYSMENU ACTIVATE POPUP _medit
-ON PAD _3ry0rjg6b OF _MSYSMENU ACTIVATE POPUP formulario
-ON PAD _3ry0rjg6c OF _MSYSMENU ACTIVATE POPUP ruteros
-ON PAD _3ry0rjg6d OF _MSYSMENU ACTIVATE POPUP tareas
+ON PAD _3ug16cbki OF _MSYSMENU ACTIVATE POPUP formulario
+ON PAD _3ug16cbkj OF _MSYSMENU ACTIVATE POPUP ruteros
+ON PAD _3ug16cbkk OF _MSYSMENU ACTIVATE POPUP tareas
 ON PAD _msm_windo OF _MSYSMENU ACTIVATE POPUP _mwindow
 ON PAD _msm_systm OF _MSYSMENU ACTIVATE POPUP _msystem
 
@@ -119,10 +119,10 @@ DEFINE BAR 21 OF _mfile PROMPT "\<Salir" ;
 	PICTRES _mfi_quit ;
 	MESSAGE "Sale de Visual FoxPro"
 ON SELECTION BAR 19 OF _mfile ;
-	DO _3ry0rjg6e ;
+	DO _3ug16cbkl ;
 	IN LOCFILE("MYGEST\PROG\MAIN" ,"MPX;MPR|FXP;PRG" ,"WHERE is MAIN?")
 ON SELECTION BAR 21 OF _mfile ;
-	DO _3ry0rjg6g ;
+	DO _3ug16cbkm ;
 	IN LOCFILE("MYGEST\PROG\MAIN" ,"MPX;MPR|FXP;PRG" ,"WHERE is MAIN?")
 
 DEFINE POPUP _medit MARGIN RELATIVE SHADOW COLOR SCHEME 4
@@ -189,7 +189,7 @@ DEFINE BAR 9 OF formulario PROMPT "Partes" ;
 DEFINE BAR 10 OF formulario PROMPT "\-"
 DEFINE BAR 11 OF formulario PROMPT "Importación ODK" ;
 	SKIP FOR _screen.goUserId<>1
-DEFINE BAR 12 OF formulario PROMPT "Importación ODK 2" ;
+DEFINE BAR 12 OF formulario PROMPT "Importación ODK LOCAL" ;
 	SKIP FOR _screen.goUserId<>1
 DEFINE BAR 13 OF formulario PROMPT "Importación ODK 2-40" ;
 	SKIP FOR _screen.goUserId<>1
@@ -208,7 +208,7 @@ ON SELECTION BAR 6 OF formulario do form formas_cobro_selector.scx
 ON SELECTION BAR 8 OF formulario do form pre_partes_selector.scx
 ON SELECTION BAR 9 OF formulario do form partes_selector.scx
 ON SELECTION BAR 11 OF formulario do form importacion_odk.scx
-ON SELECTION BAR 12 OF formulario do form importacion_odk_2.scx
+ON SELECTION BAR 12 OF formulario do form importacion_partes_odk_local.scx
 ON SELECTION BAR 13 OF formulario do form importacion_odk_2_40.scx
 ON SELECTION BAR 14 OF formulario do form partes_importar_desde_telematel.scx
 ON SELECTION BAR 16 OF formulario do form usuarios_log_selector.scx
@@ -285,7 +285,7 @@ DEFINE BAR _mst_about OF _msystem PROMPT "\<Acerca de Microsoft Visual FoxPro...
 
 *       *********************************************************
 *       *                                                         
-*       * _3RY0RJG6E  ON SELECTION BAR 19 OF POPUP _mfile         
+*       * _3UG16CBKL  ON SELECTION BAR 19 OF POPUP _mfile         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -296,13 +296,13 @@ DEFINE BAR _mst_about OF _msystem PROMPT "\<Acerca de Microsoft Visual FoxPro...
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _3ry0rjg6e
+PROCEDURE _3ug16cbkl
 DO CodeBlockClass.prg
 
 
 *       *********************************************************
 *       *                                                         
-*       * _3RY0RJG6G  ON SELECTION BAR 21 OF POPUP _mfile         
+*       * _3UG16CBKM  ON SELECTION BAR 21 OF POPUP _mfile         
 *       *                                                         
 *       * Procedure Origin:                                       
 *       *                                                         
@@ -313,7 +313,7 @@ DO CodeBlockClass.prg
 *       *                                                         
 *       *********************************************************
 *
-PROCEDURE _3ry0rjg6g
+PROCEDURE _3ug16cbkm
 *__ Preparar para salir
 =LimpiarParaSalir()
 
