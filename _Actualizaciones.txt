@@ -1,3 +1,9 @@
+- 10/06/14 Se ha cambiado la forma de generar los códigos QR, ahora se usan las
+  librerías FoxBarcodeQR.
+- 09/08/13 Se ha retocado las pantallas que buscan en el log de usuarios en web.
+- 09/08/13 en la pantalla clientes_selector, se ha modificado el código del botón
+  "Sincronizar datos complementarios", para que tenga en cuenta los nuevos campos.
+
 Commit v02 2013-08-08
 =====================
 - Cambios en la base de datos myPartes, tabla 'clientes_datos_complementarios',
